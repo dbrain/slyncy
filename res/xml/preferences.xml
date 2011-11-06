@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<PreferenceCategory android:title="@string/backend_database_title">
+		<EditTextPreference android:id="@+id/couchdb_url_pref"
+			android:title="@string/couchdb_url_pref"/>
+		<EditTextPreference android:id="@+id/couchdb_user_pref"
+			android:title="@string/couchdb_user_pref"/>
+		<EditTextPreference android:id="@+id/couchdb_pass_pref"
+			android:title="@string/couchdb_pass_pref"/>
+ 	</PreferenceCategory>
+ 	 
+</PreferenceScreen>

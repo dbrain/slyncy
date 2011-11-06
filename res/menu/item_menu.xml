@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+		android:id="@+id/delete_item"
+        android:alphabeticShortcut="d"
+		android:title="@string/delete_item" />
+	<item
+		android:id="@+id/view_item"
+        android:alphabeticShortcut="v"
+		android:title="@string/view_item" />
+</menu>

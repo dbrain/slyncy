@@ -1,0 +1,12 @@
+package com.shinetech.android.slyncy;
+
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+
+public class SlyncyPreferenceActivity extends PreferenceActivity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.preferences);
+	}
+}
