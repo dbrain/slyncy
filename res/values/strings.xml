@@ -6,12 +6,10 @@
     <string name="settings_button">Settings</string>
     <string name="backend_database_title">Backend CouchDb</string>
     <string name="couchdb_url_pref">CouchDb URL</string>
-    <string name="couchdb_user_pref">Username</string>
-    <string name="couchdb_pass_pref">Password</string>
     <string name="add_field_button">Add Field</string>
     <string name="done_button">Done</string>
     <string name="name_field">name</string>
     <string name="delete_item">Delete Document</string>
-    <string name="view_item">View Document</string>
+    <string name="edit_item">Edit Document</string>
     <string name="close_button">Close</string>
 </resources>

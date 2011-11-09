@@ -4,7 +4,7 @@
         android:alphabeticShortcut="d"
 		android:title="@string/delete_item" />
 	<item
-		android:id="@+id/view_item"
-        android:alphabeticShortcut="v"
-		android:title="@string/view_item" />
+		android:id="@+id/edit_item"
+        android:alphabeticShortcut="e"
+		android:title="@string/edit_item" />
 </menu>
