@@ -54,9 +54,9 @@ public class SlyncyActivity extends Activity implements OnClickListener {
 	protected static ServiceConnection couchConnection;
 	protected static AndroidHttpClient httpClient;
 	protected static CouchDbInstance dbInstance;
+	protected static CouchDbConnector dbConnector;
 	protected ReplicationCommand pushReplicationCommand;
 	protected ReplicationCommand pullReplicationCommand;
-	protected CouchDbConnector dbConnector;
 	protected CouchbaseViewListAdapter adapter;
 	
 	private Dialog loadingDialog;
@@ -106,11 +106,10 @@ public class SlyncyActivity extends Activity implements OnClickListener {
     	new EktorpAsyncTask() {	
 			@Override
 			protected void doInBackground() {
-				CouchDbConnector connector = dbInstance.createConnector(DATABASE_NAME, true);
 				if (mode.equals("CREATE")) {
-					connector.create(values);
+					dbConnector.create(values);
 				} else if (mode.equals("EDIT")) {
-					connector.update(values);
+					dbConnector.update(values);
 				}
 			}
 		}.execute();
@@ -121,8 +120,7 @@ public class SlyncyActivity extends Activity implements OnClickListener {
 			@Override
 			protected void doInBackground() {
 				Log.d("CouchDb", String.format("Deleting %s rev: %s", id, rev));
-				CouchDbConnector connector = dbInstance.createConnector(DATABASE_NAME, true);
-				connector.delete(id, rev);
+				dbConnector.delete(id, rev);
 			}
 		}.execute();
     }
@@ -185,12 +183,12 @@ public class SlyncyActivity extends Activity implements OnClickListener {
 			@Override
 			protected void doInBackground() {
 				dbConnector = dbInstance.createConnector(DATABASE_NAME, true);
-
+				
 				try {
 					DesignDocument dDoc = dbConnector.get(DesignDocument.class, designDocId);
 					dDoc.addView(byNameViewName, new DesignDocument.View(byNameViewFn));
 					dbConnector.update(dDoc);
-				} catch (DocumentNotFoundException ndfe) {
+				} catch (DocumentNotFoundException dnfe) {
 					DesignDocument dDoc = new DesignDocument(designDocId);
 					dDoc.addView(byNameViewName, new DesignDocument.View(byNameViewFn));
 					dbConnector.create(dDoc);
