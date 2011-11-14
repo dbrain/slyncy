@@ -1,5 +1,5 @@
 # Slyncy
-Slyncy is an example application (read: slop) using CouchDb on Android. It was bashed out for a blog entry [here](http://wp.me/p1IYp8-nR).
+Slyncy is an example application (read: slop) using CouchDb on Android. It was bashed out for a blog entry [here](http://blog.shinetech.com/2011/11/14/couchdb-on-android/).
 This is based on [AndroidGrocerySync](https://github.com/couchbaselabs/AndroidGrocerySync).
 
 ## Installation
